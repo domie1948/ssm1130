@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.GuahaoDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.GuahaoEntity" id="guahaoMap">
+        <result property="guahaobianhao" column="guahaobianhao"/>
+        <result property="jiuzhenkeshi" column="jiuzhenkeshi"/>
+        <result property="guahaofeiyong" column="guahaofeiyong"/>
+        <result property="guahaoleixing" column="guahaoleixing"/>
+        <result property="bingrenxingming" column="bingrenxingming"/>
+        <result property="shenfenzheng" column="shenfenzheng"/>
+        <result property="lianxidianhua" column="lianxidianhua"/>
+        <result property="xingbie" column="xingbie"/>
+        <result property="nianling" column="nianling"/>
+        <result property="xiaohaixinxi" column="xiaohaixinxi"/>
+        <result property="xiaohaijiazhang" column="xiaohaijiazhang"/>
+        <result property="jiuzhenriqi" column="jiuzhenriqi"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.GuahaoVO" >
+		SELECT * FROM guahao  guahao         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.GuahaoVO" >
+		SELECT  guahao.* FROM guahao  guahao 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.GuahaoView" >
+
+		SELECT  guahao.* FROM guahao  guahao 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.GuahaoView" >
+		SELECT * FROM guahao  guahao <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
